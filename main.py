@@ -8,6 +8,16 @@ window.minsize(width=300, height=330)
 
 window.config(background='#C0A080')
 
+try:
+    with open("balance.txt", "r") as file:
+        balance = file.read()
+except FileNotFoundError:
+    with open("balance.txt", "w") as file:
+        file.write("0")
+    with open("balance.txt", "w") as file:
+        balance = file.read()
+
+
 # logo
 
 bank = tkinter.PhotoImage(file="images/bank2.png")
